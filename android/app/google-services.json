@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "520601938746",
+    "project_id": "letelgram",
+    "storage_bucket": "letelgram.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:520601938746:android:81a7c7d427a2fdb29bbe03",
+        "android_client_info": {
+          "package_name": "com.yasarabi.latelgram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "520601938746-rt7frl3q86pmdl0r35g7rmttbrhinlvk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWvpzR8xpPVcRlC0TkrmvDL0aGul4gYpY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "520601938746-rt7frl3q86pmdl0r35g7rmttbrhinlvk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
