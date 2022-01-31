@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:latelgram/responsive/mobile_screen_layout.dart';
 import 'package:latelgram/responsive/responsive_layout_screen.dart';
 import 'package:latelgram/responsive/web_screen_layout.dart';
+import 'package:latelgram/screens/login_screen.dart';
 import 'package:latelgram/utils/colors.dart';
 
 void main() async {
@@ -35,7 +36,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: mobileBackgroundColor,
       ),
-      home: ResponsiveLayout(mobileScreenLayout: MobileScreenLayout(), webScreenLayout: WebScreenLayout())
+      /// home: ResponsiveLayout(mobileScreenLayout: MobileScreenLayout(), webScreenLayout: WebScreenLayout())
+      home: LoginScreen(),
     );
   }
 }
