@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:latelgram/resources/auth_methods.dart';
-import 'package:latelgram/screens/home_screen.dart';
+import 'package:latelgram/responsive/mobile_screen_layout.dart';
+import 'package:latelgram/responsive/responsive_layout_screen.dart';
+import 'package:latelgram/responsive/web_screen_layout.dart';
 import 'package:latelgram/screens/signup_screen.dart';
 import 'package:latelgram/utils/colors.dart';
 import 'package:latelgram/utils/utils.dart';
@@ -33,13 +35,24 @@ class _LoginScreenState extends State<LoginScreen> {
     String res = await AuthMethods().loginUser(email: _emailController.text, password: _passController.text);
 
     if(res == 'success') {
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomeScreen()));
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+          builder: (context) => ResponsiveLayout(
+            mobileScreenLayout: MobileScreenLayout(),
+            webScreenLayout: WebScreenLayout(),
+          )
+        )
+      );
     } else {
       showSnackBar(res, context);
     }
     setState(() {
       _isLoading = false;
     });
+  }
+
+  void navigateToSignup() {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignupScreen()));
   }
 
   @override
@@ -113,13 +126,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               // Transitioning to signing up
               GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => SignupScreen()),
-                  );
-                },
+                onTap: navigateToSignup,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

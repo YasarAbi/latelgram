@@ -3,6 +3,10 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:latelgram/resources/auth_methods.dart';
+import 'package:latelgram/responsive/mobile_screen_layout.dart';
+import 'package:latelgram/responsive/responsive_layout_screen.dart';
+import 'package:latelgram/responsive/web_screen_layout.dart';
+import 'package:latelgram/screens/login_screen.dart';
 import 'package:latelgram/utils/colors.dart';
 import 'package:latelgram/utils/utils.dart';
 import 'package:latelgram/widgets/text_field_input.dart';
@@ -55,7 +59,19 @@ class _SignupScreenState extends State<SignupScreen> {
 
     if (res != 'success') {
       showSnackBar(res, context);
-    } 
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => ResponsiveLayout(
+            mobileScreenLayout: MobileScreenLayout(),
+            webScreenLayout: WebScreenLayout(),
+          )
+        )
+      );
+    }
+  }
+
+  void navigateToLogin() {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginScreen()));
   }
 
   @override
@@ -157,6 +173,31 @@ class _SignupScreenState extends State<SignupScreen> {
                 child: Container(),
                 flex: 2,
               ),
+              GestureDetector(
+                onTap: navigateToLogin,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      child: Text('Hesabın Var mıydı? '),
+                      padding: EdgeInsets.symmetric(
+                        vertical: 8,
+                      ),
+                    ),
+                    Container(
+                      child: Text(
+                        'Giriş yap',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      padding: EdgeInsets.symmetric(
+                        vertical: 8,
+                      ),
+                    )
+                  ],
+                ),
+              )
             ],
           ),
         ),

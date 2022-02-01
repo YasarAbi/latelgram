@@ -1,7 +1,7 @@
 # latelgram
 
-Rabia hanim ve Yasar abinin katkilariyla olusturuldu.
-Instagram klonu projesi + ARGE
+Instagram klonu projesi + ARGE. Rabia hanim ve Yasar abinin katkilariyla olusturuldu.
+
 
 ## Getting Started
 
