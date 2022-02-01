@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:latelgram/utils/colors.dart';
+import 'package:latelgram/utils/global_variables.dart';
 
 class MobileScreenLayout extends StatefulWidget {
   const MobileScreenLayout({Key? key}) : super(key: key);
@@ -40,13 +41,8 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
 
     return Scaffold(
       body: PageView(
-        children: [
-          Center(child: Text('Anasayfa')),
-          Center(child: Text('Arama')),
-          Center(child: Text('Resim Ekle')),
-          Center(child: Text('Favoriler')),
-          Center(child: Text('Profil')),
-        ],
+        physics: NeverScrollableScrollPhysics(),
+        children: homeScreenItems,
         controller: pageController,
         onPageChanged: onPageChanged,
       ),
