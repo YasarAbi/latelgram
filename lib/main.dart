@@ -23,13 +23,13 @@ void main() async {
       storageBucket: "letelgram.appspot.com")
   );
   } else {
-    await Firebase.initializeApp;
+    await Firebase.initializeApp();
   }
-  
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
           builder: (context, snapshot){
             if(snapshot.connectionState == ConnectionState.active){
               if(snapshot.hasData){
-                return ResponsiveLayout(
+                return const ResponsiveLayout(
                   mobileScreenLayout: MobileScreenLayout(), 
                   webScreenLayout: WebScreenLayout());
               } else if(snapshot.hasError){
@@ -59,13 +59,13 @@ class MyApp extends StatelessWidget {
               }
             }
             if(snapshot.connectionState == ConnectionState.waiting) {
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(
                   color: primaryColor,
                 ),
               );
             }
-            return LoginScreen();
+            return const LoginScreen();
           },
           ),
       ),

@@ -10,7 +10,7 @@ class Post {
   final String profImage;
   final likes;
 
-  Post({
+  const Post({
     required this.description,
     required this.uid,
     required this.postId,

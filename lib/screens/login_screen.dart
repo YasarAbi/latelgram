@@ -37,7 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
     if(res == 'success') {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => ResponsiveLayout(
+          builder: (context) => const ResponsiveLayout(
             mobileScreenLayout: MobileScreenLayout(),
             webScreenLayout: WebScreenLayout(),
           )
@@ -60,7 +60,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 32),
+          padding: const EdgeInsets.symmetric(horizontal: 32),
           width: double.infinity,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -75,7 +75,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 color: primaryColor,
                 height: 64,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 64,
               ),
               // text field input for email
@@ -84,7 +84,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 textInputType: TextInputType.emailAddress,
                 textEditingController: _emailController,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 24,
               ),
               // text field input for pass
@@ -94,7 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 textEditingController: _passController,
                 isPass: true,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 24,
               ),
               // button login
@@ -117,7 +117,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       color: blueColor),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 12,
               ),
               Flexible(
@@ -131,19 +131,19 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      child: Text('Hesabın yok mu? '),
-                      padding: EdgeInsets.symmetric(
+                      child: const Text('Hesabın yok mu? '),
+                      padding: const EdgeInsets.symmetric(
                         vertical: 8,
                       ),
                     ),
                     Container(
-                      child: Text(
+                      child: const Text(
                         'Üye ol.',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      padding: EdgeInsets.symmetric(
+                      padding: const EdgeInsets.symmetric(
                         vertical: 8,
                       ),
                     )

@@ -9,7 +9,7 @@ class User {
   final List following;
   final String photoUrl;
 
-  User({
+  const User({
     required this.email,
     required this.uid,
     required this.photoUrl,

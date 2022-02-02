@@ -61,7 +61,7 @@ class _SignupScreenState extends State<SignupScreen> {
       showSnackBar(res, context);
       Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => ResponsiveLayout(
+          builder: (context) => const ResponsiveLayout(
             mobileScreenLayout: MobileScreenLayout(),
             webScreenLayout: WebScreenLayout(),
           )
@@ -79,7 +79,7 @@ class _SignupScreenState extends State<SignupScreen> {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 32),
+          padding: const EdgeInsets.symmetric(horizontal: 32),
           width: double.infinity,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -111,7 +111,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       ))
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 24,
               ),
               TextFieldInput(
@@ -119,7 +119,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 textInputType: TextInputType.text,
                 textEditingController: _usernameController,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 24,
               ),
               TextFieldInput(
@@ -127,7 +127,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 textInputType: TextInputType.emailAddress,
                 textEditingController: _emailController,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 24,
               ),
               TextFieldInput(
@@ -136,7 +136,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 textEditingController: _passController,
                 isPass: true,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 24,
               ),
               TextFieldInput(
@@ -144,7 +144,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 textInputType: TextInputType.text,
                 textEditingController: _bioController,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 24,
               ),
               InkWell(
@@ -152,7 +152,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 child: Container(
                   child: _isLoading
                       ? Center(
-                          child: CircularProgressIndicator(
+                          child: const CircularProgressIndicator(
                             color: primaryColor,
                           ),
                         )
@@ -166,7 +166,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       color: blueColor),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 12,
               ),
               Flexible(
@@ -179,19 +179,19 @@ class _SignupScreenState extends State<SignupScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      child: Text('Hesabın Var mıydı? '),
+                      child: const Text('Hesabın Var mıydı? '),
                       padding: EdgeInsets.symmetric(
                         vertical: 8,
                       ),
                     ),
                     Container(
-                      child: Text(
+                      child: const Text(
                         'Giriş yap',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      padding: EdgeInsets.symmetric(
+                      padding: const EdgeInsets.symmetric(
                         vertical: 8,
                       ),
                     )

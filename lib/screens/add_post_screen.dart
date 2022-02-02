@@ -48,11 +48,11 @@ class _AddPostScreenState extends State<AddPostScreen> {
         context: context,
         builder: (context) {
           return SimpleDialog(
-            title: Text('Gönderi Oluştur'),
+            title: const Text('Gönderi Oluştur'),
             children: [
               SimpleDialogOption(
-                padding: EdgeInsets.all(20),
-                child: Text('Fotoğraf Çek'),
+                padding: const EdgeInsets.all(20),
+                child: const Text('Fotoğraf Çek'),
                 onPressed: () async {
                   Navigator.of(context).pop();
                   Uint8List file = await pickImage(ImageSource.camera);
@@ -62,8 +62,8 @@ class _AddPostScreenState extends State<AddPostScreen> {
                 },
               ),
               SimpleDialogOption(
-                padding: EdgeInsets.all(20),
-                child: Text('Galeriden Yükle'),
+                padding: const EdgeInsets.all(20),
+                child: const Text('Galeriden Yükle'),
                 onPressed: () async {
                   Navigator.of(context).pop();
                   Uint8List file = await pickImage(ImageSource.gallery);
@@ -73,8 +73,8 @@ class _AddPostScreenState extends State<AddPostScreen> {
                 },
               ),
               SimpleDialogOption(
-                padding: EdgeInsets.all(20),
-                child: Text('İptal'),
+                padding: const EdgeInsets.all(20),
+                child: const Text('İptal'),
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
@@ -103,7 +103,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
     return _file == null
         ? Center(
             child: IconButton(
-              icon: Icon(Icons.upload),
+              icon: const Icon(Icons.upload),
               onPressed: () => _selectImage(context),
             ),
           )
@@ -111,16 +111,16 @@ class _AddPostScreenState extends State<AddPostScreen> {
             appBar: AppBar(
               backgroundColor: mobileBackgroundColor,
               leading: IconButton(
-                icon: Icon(Icons.arrow_back),
-                onPressed: () {},
+                icon: const Icon(Icons.arrow_back),
+                onPressed: clearImage,
               ),
-              title: Text('Resim yükle'),
+              title: const Text('Resim yükle'),
               centerTitle: false,
               actions: [
                 TextButton(
                   onPressed: () =>
                       postImage(user.uid, user.username, user.photoUrl),
-                  child: Text('Gönder',
+                  child: const Text('Gönder',
                       style: TextStyle(
                           color: Colors.blueAccent,
                           fontWeight: FontWeight.bold,
@@ -130,8 +130,8 @@ class _AddPostScreenState extends State<AddPostScreen> {
             ),
             body: Column(
               children: [
-                _isLoading? LinearProgressIndicator():Padding(padding: EdgeInsets.only(top: 0)),
-                Divider(),
+                _isLoading? const LinearProgressIndicator():const Padding(padding: EdgeInsets.only(top: 0)),
+                const Divider(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -143,7 +143,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                       width: MediaQuery.of(context).size.width * 0.5,
                       child: TextField(
                         controller: _descriptionController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                             hintText: 'Açıklama girin...',
                             border: InputBorder.none),
                         maxLines: 8,
@@ -164,7 +164,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                         ),
                       ),
                     ),
-                    Divider(),
+                    const Divider(),
                   ],
                 )
               ],
